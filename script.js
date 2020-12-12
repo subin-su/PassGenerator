@@ -2,10 +2,10 @@
 // program started
 
 let generatepasswordBtn = document.querySelector("#generate");
-
+alert("Click below button to start");
 
 function first(){
-    alert("Click below button to start");
+   
 
 
 var length=prompt("How long do you want your password ?");
@@ -41,43 +41,23 @@ let numbers= confirm("Do you wants to have numbers in your password?");
 }
 
 function password(){
-    let confirm=first();
+    let x=first();
     if (!x) {
        return;
+    }
+    var choice1=onlyupperCase[Math.floor(Math.random()*onlyupperCase.length)];
+    var choice2=onlylowerCase[Math.floor(Math.random()*onlylowerCase.length)];
+    var choice3=onlynumbers[Math.floor(Math.random()*onlynumbers.length)];
+    var choice4=onlysymbols[Math.floor(Math.random()*onlysymbols.length)];
+    let password1=[];
+    if(x.symbols){
+        password1.push(choice4);}
+        if(x.numbers){
+            password1.push(choice3);}
+            if(x.upperCase){
+                password1.push(choice1);}
+                if(x.lowerCase){
+                    password1.push(choice42);}
 
-let password1=[];
-console.log(password1)
-if (x.lowerCase){
-  for (let i = 0; i < onlylowerCase.length; i++) {
-    password1.push(onlylowerCase[i]);
-  }
-}
-if (x.upperCase){
-  for (let i = 0; i <onlyupperCase.length; i++) {
-     password1.push(onlyupperCase[i]);
-  }
-}
-if (x.numeric){
-  for (let i = 0; i <onlynumbers.length; i++) {
-      password1.push(onlynumbers[i]);
-  }
-}
-if (x.specialcharacters){
-  for (let i = 0; i < onlysymbols.length; i++) {
-      password1.push(onlysymbols[i]);
-}
-}
-let password2=[];
-for (let i = 0; i < x.length; i++) {
- let randomx =Math.floor(Math.random()*Math.floor(password1l.length));
- password2.push(password1[randomx]);
-}
-console.log(password2)
-let finalpassword=password2.join("");
-console.log(finalpassword);
-document.getElementById("password").value = finalpassword;
-} }
-
-
-// Add event listener to generate button
-generatepasswordBtn.addEventListener("click", password);
+        
+    
