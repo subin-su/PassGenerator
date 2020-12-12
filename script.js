@@ -5,6 +5,8 @@ let generatepasswordBtn = document.querySelector("#generate");
 
 
 function first(){
+    alert("Click below button to start");
+
 
 var length=prompt("How long do you want your password ?");
 let onlyupperCase= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -20,7 +22,7 @@ let onlysymbols=["!","@","#","$","%","&","^","*","+","?"]
     
     }
   else{
-    return;
+    alert("Choose more options")
     
   }
 let symbols= confirm("Do you wants to have symbols in your password?");
@@ -34,46 +36,48 @@ let numbers= confirm("Do you wants to have numbers in your password?");
     }
     else{
         alert("Wait till the password is generating");
-    }}
-
-
- 
-     let x=first();
-     if(!x){
-         return;
-     }
- let  password=[];
-        var choice1=onlyupperCase[Math.floor(Math.random()*onlyupperCase.length)];
-    var choice2=onlylowerCase[Math.floor(Math.random()*onlylowerCase.length)];
-    var choice3=onlynumbers[Math.floor(Math.random()*onlynumbers.length)];
-    var choice4=onlysymbols[Math.floor(Math.random()*onlysymbols.length)];
-     if(!symbols&&!upperCase&&!lowerCase&&!numbers){
-       alert("Choose atleast 1 OK to continue");}
-    
-       //
-       if(symbols){
-           password.push(choice4);
-       }
-       if(upperCase){
-        password.push(choice1);
     }
-    if(lowerCase){
-        password.push(choice2);
-    }
-    if(numbers){
-        password.push(choice3);
-    }
-    
- 
 
- alert(password);
- for(var j=0;j<length;i++){
- var choice20=password[Math.floor(Math.random()*password.length)];
- password.push(choice20);
- alert(password);}}
-  
-    
+}
 
-    
+function password(){
+    let confirm=first();
+    if (!x) {
+       return;
 
-    
+let password1=[];
+console.log(password1)
+if (x.lowerCase){
+  for (let i = 0; i < onlylowerCase.length; i++) {
+    password1.push(onlylowerCase[i]);
+  }
+}
+if (x.upperCase){
+  for (let i = 0; i <onlyupperCase.length; i++) {
+     password1.push(onlyupperCase[i]);
+  }
+}
+if (x.numeric){
+  for (let i = 0; i <onlynumbers.length; i++) {
+      password1.push(onlynumbers[i]);
+  }
+}
+if (x.specialcharacters){
+  for (let i = 0; i < onlysymbols.length; i++) {
+      password1.push(onlysymbols[i]);
+}
+}
+let password2=[];
+for (let i = 0; i < x.length; i++) {
+ let randomx =Math.floor(Math.random()*Math.floor(password1l.length));
+ password2.push(password1[randomx]);
+}
+console.log(password2)
+let finalpassword=password2.join("");
+console.log(finalpassword);
+document.getElementById("password").value = finalpassword;
+} }
+
+
+// Add event listener to generate button
+generatepasswordBtn.addEventListener("click", password);
