@@ -25,20 +25,30 @@ if(length<8||length>128){
     else{
         alert("Wait till the password is generating");
     }
-    var choice1=onlyupperCase[Math.floor(Math.random()*onlyupperCase.length)];
+ 
+    
+ let  password=[];
+        var choice1=onlyupperCase[Math.floor(Math.random()*onlyupperCase.length)];
     var choice2=onlylowerCase[Math.floor(Math.random()*onlylowerCase.length)];
     var choice3=onlynumbers[Math.floor(Math.random()*onlynumbers.length)];
     var choice4=onlysymbols[Math.floor(Math.random()*onlysymbols.length)];
-    alert(choice1);
-    alert(choice2);
- function password(){
-     if(confirm.symbols||confirm.upperCase||confirm.lowerCase||confirm.numbers){
-         password.push(choice1);
-       
+     if(!symbols&&!upperCase&&!lowerCase&&!numbers){
+       alert("Choose atleast 1 OK to continue");}
+       if(symbols){
+           password.push(choice4);
+       }
+       if(upperCase){
+        password.push(choice1);
+    }
+    if(lowerCase){
+        password.push(choice2);
+    }
+    if(numbers){
+        password.push(choice3);
+    }
+ 
 
-     }
- }
- alert("Password generated is "+password());
+ alert(password);
   
     
 
